@@ -40,7 +40,7 @@ export async function GET(request: Request) {
     // クリックログの取得
     const { data: logs, error: logsError } = await supabase
       .from('click_logs')
-      .select('id, clicked_at, user_agent, referer, device_type')
+      .select('id, clicked_at, referer, device_type')
       .eq('url_id', id)
       .gte('clicked_at', thirtyDaysAgoString)
       .order('clicked_at', { ascending: false });
@@ -53,20 +53,17 @@ export async function GET(request: Request) {
     // CSV フォーマット生成
     // BOM (Byte Order Mark) を追加して Excel での文字化けを防ぐ
     const BOM = '\uFEFF';
-    const csvHeaders = ['クリック日時', 'デバイスタイプ', 'リファラ (参照元URL)', 'OS・ブラウザ等 (UserAgent)'].join(',');
+    const csvHeaders = ['クリック日時', 'デバイスタイプ', 'リファラ (参照元URL)'].join(',');
 
     const csvRows = logs.map(log => {
       const date = new Date(log.clicked_at).toLocaleString('ja-JP');
       const device = log.device_type || 'Unknown';
       const referer = log.referer === 'direct' ? 'Direct' : (log.referer || 'Unknown');
-      // カンマが含まれている可能性があるのでダブルクォーテーションで囲む
-      const userAgent = `"${(log.user_agent || '').replace(/"/g, '""')}"`;
 
       return [
         `"${date}"`,
         `"${device}"`,
-        `"${referer}"`,
-        userAgent
+        `"${referer}"`
       ].join(',');
     });
 
