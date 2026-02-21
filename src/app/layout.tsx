@@ -10,6 +10,28 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'ShortLinkify - 全機能無料の短縮URL作成・分析プラットフォーム',
   description: 'カスタムURLの設定、生成数無制限（一括最大300件）・利用期限なしのURL短縮、多角的なアクセス解析、QRコード自動生成など、マーケティングとリンク管理に必要なすべての機能を安全・完全無料でご提供します。',
+  openGraph: {
+    title: 'ShortLinkify - 全機能無料の短縮URL作成・分析プラットフォーム',
+    description: 'カスタムURLの設定、一括短縮機能、高度なアクセス解析を完全無料で。',
+    url: 'https://slf.onl',
+    siteName: 'ShortLinkify',
+    images: [
+      {
+        url: 'https://slf.onl/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'ShortLinkify OGP Image',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ShortLinkify - 全機能無料の短縮URL作成・分析プラットフォーム',
+    description: 'カスタムURLの設定、一括短縮機能、高度なアクセス解析を完全無料で。',
+    images: ['https://slf.onl/og-image.png'],
+  },
 };
 
 export default async function RootLayout({
