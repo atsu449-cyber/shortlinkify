@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center animate-fade-in hero-section" style={{ marginTop: '1rem', marginBottom: '4rem' }}>
         <div style={{ display: 'inline-block', background: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)', padding: '0.35rem 1rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.2)', fontSize: '0.875rem' }}>
-          ✨ すべての便利機能が完全無料
+          ✨ すべての機能が永久無料
         </div>
         <h1 className="hero-title" style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: 1.2 }}>
           URLをスマートに。<br />
