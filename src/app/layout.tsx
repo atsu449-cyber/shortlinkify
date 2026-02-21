@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'ShortLinkify',
     images: [
       {
-        url: 'https://slf.onl/og-image.png',
+        url: 'https://slf.onl/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'ShortLinkify OGP Image',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ShortLinkify - 全機能無料の短縮URL作成・分析プラットフォーム',
     description: 'カスタムURLの設定、一括短縮機能、高度なアクセス解析を完全無料で。',
-    images: ['https://slf.onl/og-image.png'],
+    images: ['https://slf.onl/og-image.jpg'],
   },
 };
 
