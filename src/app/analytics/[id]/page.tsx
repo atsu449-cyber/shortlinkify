@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useMemo, use } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Clock, Globe, Smartphone, Copy } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Globe, Smartphone, Copy, Download } from 'lucide-react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -35,6 +35,7 @@ export default function AnalyticsPage({ params }: { params: Promise<{ id: string
   const [urlData, setUrlData] = useState<any>(null);
   const [clickLogs, setClickLogs] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isExporting, setIsExporting] = useState(false);
 
   const supabase = createClient();
 
@@ -66,6 +67,30 @@ export default function AnalyticsPage({ params }: { params: Promise<{ id: string
     }
     fetchData();
   }, [id, supabase]);
+
+  const handleExportCsv = async () => {
+    try {
+      setIsExporting(true);
+      const res = await fetch(`/api/export-csv?id=${id}`);
+      if (!res.ok) {
+        throw new Error('CSVのエクスポートに失敗しました。');
+      }
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `click_logs_${id}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      alert('エラー: CSVのダウンロードに失敗しました。');
+      console.error(err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   const { lineChartData, barChartData, referersList } = useMemo(() => {
     // 期間（timeRange）に応じた集計
@@ -234,11 +259,21 @@ export default function AnalyticsPage({ params }: { params: Promise<{ id: string
           <ArrowLeft size={16} /> ダッシュボードに戻る
         </Link>
         <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h1 style={{ fontSize: '1.5rem', color: 'var(--primary)', margin: 0 }}>https://{shortUrlToDisplay}</h1>
-            <button className="btn btn-secondary" style={{ padding: '0.5rem 1rem' }} onClick={() => navigator.clipboard.writeText(`https://${shortUrlToDisplay}`)}>
-              <Copy size={16} /> コピー
-            </button>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+            <h1 style={{ fontSize: '1.5rem', color: 'var(--primary)', margin: 0, wordBreak: 'break-all' }}>https://{shortUrlToDisplay}</h1>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <button className="btn btn-secondary" style={{ padding: '0.5rem 1rem' }} onClick={() => navigator.clipboard.writeText(`https://${shortUrlToDisplay}`)}>
+                <Copy size={16} /> コピー
+              </button>
+              <button
+                className="btn btn-primary"
+                style={{ padding: '0.5rem 1rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', opacity: isExporting ? 0.7 : 1 }}
+                onClick={handleExportCsv}
+                disabled={isExporting || clickLogs.length === 0}
+              >
+                <Download size={16} /> {isExporting ? '処理中...' : 'CSVダウンロード (直近30日)'}
+              </button>
+            </div>
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>{urlData.long_url}</p>
         </div>
