@@ -15,8 +15,7 @@ export default function Home() {
         </h1>
         <p style={{ fontSize: '1.125rem', color: 'var(--text-muted)', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: 1.6 }}>
           通常は有料プランとなる「URLの文字列カスタマイズ」も無料。<br />
-          最大300件の一括生成やQRコード、高機能なアクセス解析まで、<br />
-          マーケティングに必要なすべてをこれ一つで提供します。
+          最大300件の一括生成やQRコード、高機能なアクセス解析も可能
         </p>
         <div className="flex justify-center gap-4 hero-buttons">
           <Link href="/register" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
@@ -205,27 +204,8 @@ export default function Home() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
                   <QrCode size={20} /> QRコード
                 </div>
-                <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}>
-                  <svg width="150" height="150" viewBox="0 0 100 100">
-                    <rect x="0" y="0" width="100" height="100" fill="white" />
-                    <path d="M10 10 h20 v20 h-20 z M15 15 h10 v10 h-10 z M20 20 h0 v0 z" fill="#0f172a" fillRule="evenodd" />
-                    <rect x="15" y="15" width="10" height="10" fill="#0f172a" />
-                    <path d="M70 10 h20 v20 h-20 z M75 15 h10 v10 h-10 z" fill="#0f172a" fillRule="evenodd" />
-                    <rect x="75" y="15" width="10" height="10" fill="#0f172a" />
-                    <path d="M10 70 h20 v20 h-20 z M15 75 h10 v10 h-10 z" fill="#0f172a" fillRule="evenodd" />
-                    <rect x="15" y="75" width="10" height="10" fill="#0f172a" />
-                    {/* pattern mock */}
-                    <rect x="40" y="10" width="5" height="10" fill="#0f172a" />
-                    <rect x="50" y="15" width="15" height="5" fill="#0f172a" />
-                    <rect x="10" y="40" width="20" height="5" fill="#0f172a" />
-                    <rect x="40" y="30" width="10" height="20" fill="#0f172a" />
-                    <rect x="30" y="50" width="40" height="10" fill="#0f172a" />
-                    <rect x="60" y="40" width="10" height="10" fill="#0f172a" />
-                    <rect x="80" y="40" width="10" height="30" fill="#0f172a" />
-                    <rect x="40" y="70" width="20" height="5" fill="#0f172a" />
-                    <rect x="50" y="80" width="10" height="10" fill="#0f172a" />
-                    <rect x="70" y="85" width="15" height="5" fill="#0f172a" />
-                  </svg>
+                <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', display: 'flex', justifyContent: 'center' }}>
+                  <img src="/qr-demo.png" alt="QR Code" width={150} height={150} style={{ display: 'block', borderRadius: '4px' }} />
                 </div>
                 <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.5rem', fontFamily: 'monospace' }}>
                   https://www.slf.onl/companyname/3tbsn
