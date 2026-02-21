@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <div className="container" style={{ padding: '2rem 1.5rem', minHeight: 'calc(100vh - 100px)' }}>
       {/* Hero Section */}
-      <section className="text-center animate-fade-in" style={{ marginTop: '2rem', marginBottom: '6rem' }}>
-        <div style={{ display: 'inline-block', background: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)', padding: '0.5rem 1.25rem', borderRadius: '999px', fontWeight: 600, marginBottom: '2rem', border: '1px solid rgba(16, 185, 129, 0.2)', fontSize: '0.875rem' }}>
+      <section className="text-center animate-fade-in hero-section" style={{ marginTop: '1rem', marginBottom: '4rem' }}>
+        <div style={{ display: 'inline-block', background: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)', padding: '0.35rem 1rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.2)', fontSize: '0.875rem' }}>
           ✨ すべての便利機能が完全無料
         </div>
-        <h1 className="hero-title" style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+        <h1 className="hero-title" style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: 1.2 }}>
           URLをスマートに。<br />
           <span className="text-gradient">必要なすべてを</span>安全・シンプルに提供
         </h1>
@@ -152,36 +152,45 @@ export default function Home() {
             </p>
           </div>
           <div style={{ flex: '1 1 350px' }}>
-            <div className="glass-panel" style={{ padding: '2rem', position: 'relative' }}>
+            <div className="glass-panel" style={{ padding: '0', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-                <div style={{ fontSize: '1.125rem', fontWeight: 600 }}>クリック推移</div>
-                <div style={{ display: 'flex', gap: '0.25rem', background: 'var(--bg-color)', padding: '0.25rem', borderRadius: '6px' }}>
-                  <div style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', cursor: 'pointer' }}>月別</div>
-                  <div style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', cursor: 'pointer' }}>週別</div>
-                  <div style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'white', background: 'var(--primary)', borderRadius: '4px', cursor: 'pointer' }}>日別</div>
-                  <div style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', cursor: 'pointer' }}>時間帯別</div>
+              <div style={{ background: 'white', padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', fontWeight: 600, color: 'var(--text-main)' }}>
+                  <BarChart3 size={18} color="var(--primary)" /> アクセス推移
                 </div>
-              </div>
-              {/* Generic Line/Bar Chart Mock */}
-              <div style={{ position: 'relative', height: '140px', borderBottom: '1px solid var(--border-color)', borderLeft: '1px solid var(--border-color)', paddingBottom: '0.5rem', paddingLeft: '0.5rem', marginBottom: '0.75rem' }}>
-                {/* Mock grid lines */}
-                <div style={{ position: 'absolute', top: '25%', left: '0.5rem', right: 0, borderBottom: '1px dashed var(--border-color)', opacity: 0.5 }}></div>
-                <div style={{ position: 'absolute', top: '50%', left: '0.5rem', right: 0, borderBottom: '1px dashed var(--border-color)', opacity: 0.5 }}></div>
-                <div style={{ position: 'absolute', top: '75%', left: '0.5rem', right: 0, borderBottom: '1px dashed var(--border-color)', opacity: 0.5 }}></div>
-                {/* Bars */}
-                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-around', height: '100%', width: '100%', paddingTop: '1rem' }}>
-                  <div style={{ width: '8%', height: '30%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
-                  <div style={{ width: '8%', height: '60%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
-                  <div style={{ width: '8%', height: '45%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
-                  <div style={{ width: '8%', height: '95%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
-                  <div style={{ width: '8%', height: '80%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
-                  <div style={{ width: '8%', height: '55%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
-                  <div style={{ width: '8%', height: '40%', background: 'var(--primary)', opacity: 0.8, borderRadius: '4px 4px 0 0' }}></div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.25rem', marginBottom: '1.5rem' }}>
+                  <div style={{ padding: '0.35rem 1rem', fontSize: '0.75rem', color: 'white', background: 'var(--primary)', borderRadius: '4px', cursor: 'pointer', fontWeight: 500 }}>時間別</div>
+                  <div style={{ padding: '0.35rem 1rem', fontSize: '0.75rem', color: 'var(--text-muted)', background: 'var(--bg-color)', borderRadius: '4px', cursor: 'pointer' }}>日別</div>
+                  <div style={{ padding: '0.35rem 1rem', fontSize: '0.75rem', color: 'var(--text-muted)', background: 'var(--bg-color)', borderRadius: '4px', cursor: 'pointer' }}>週別</div>
+                  <div style={{ padding: '0.35rem 1rem', fontSize: '0.75rem', color: 'var(--text-muted)', background: 'var(--bg-color)', borderRadius: '4px', cursor: 'pointer' }}>月別</div>
                 </div>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-muted)', fontSize: '0.75rem', padding: '0 0.5rem' }}>
-                <span>02/01</span><span>02/03</span><span>02/05</span><span>02/07</span>
+                {/* Line Chart Mock with SVG */}
+                <div style={{ position: 'relative', height: '140px', width: '100%', marginBottom: '0.75rem' }}>
+                  <svg width="100%" height="100%" viewBox="0 0 300 100" preserveAspectRatio="none">
+                    {/* Grid lines */}
+                    <line x1="0" y1="20" x2="300" y2="20" stroke="var(--border-color)" strokeWidth="1" />
+                    <line x1="0" y1="40" x2="300" y2="40" stroke="var(--border-color)" strokeWidth="1" />
+                    <line x1="0" y1="60" x2="300" y2="60" stroke="var(--border-color)" strokeWidth="1" />
+                    <line x1="0" y1="80" x2="300" y2="80" stroke="var(--border-color)" strokeWidth="1" />
+                    <line x1="0" y1="100" x2="300" y2="100" stroke="var(--border-color)" strokeWidth="1" />
+
+                    {/* Fill area */}
+                    <path d="M0 100 L180 100 L200 10 L220 100 L240 100 L260 100 L280 10 L300 100 Z" fill="rgba(37, 99, 235, 0.15)" />
+                    {/* Line series */}
+                    <path d="M0 100 L180 100 L200 10 L220 100 L240 100 L260 100 L280 10 L300 100" fill="none" stroke="#2563eb" strokeWidth="2" />
+
+                    {/* Base tracking line */}
+                    <line x1="0" y1="100" x2="300" y2="100" stroke="#2563eb" strokeWidth="2" />
+
+                    {/* Points */}
+                    <circle cx="200" cy="10" r="3" fill="white" stroke="#2563eb" strokeWidth="2" />
+                    <circle cx="280" cy="10" r="3" fill="white" stroke="#2563eb" strokeWidth="2" />
+                    <circle cx="0" cy="100" r="2" fill="#90b4f8" /><circle cx="30" cy="100" r="2" fill="#90b4f8" /><circle cx="60" cy="100" r="2" fill="#90b4f8" /><circle cx="90" cy="100" r="2" fill="#90b4f8" /><circle cx="120" cy="100" r="2" fill="#90b4f8" /><circle cx="150" cy="100" r="2" fill="#90b4f8" />
+                  </svg>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-muted)', fontSize: '0.65rem' }}>
+                  <span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span><span>0:00</span><span>2:00</span><span>4:00</span><span>6:00</span><span>8:00</span><span>10:00</span><span>12:00</span><span>14:00</span>
+                </div>
               </div>
             </div>
           </div>
@@ -190,25 +199,41 @@ export default function Home() {
         {/* Detail 4: QR Code Generation */}
         <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '4rem', alignItems: 'center' }}>
           <div style={{ flex: '1 1 350px' }}>
-            <div className="glass-panel" style={{ padding: '2.5rem', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <div className="glass-panel" style={{ padding: '0', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
-              <div style={{ background: 'white', padding: '1rem', borderRadius: '12px', border: '1px solid var(--border-color)', marginBottom: '1.5rem', display: 'inline-block' }}>
-                {/* Mock QR Code Pattern via CSS grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '4px', width: '120px', height: '120px' }}>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
-                  <div style={{ background: 'transparent' }}></div>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
-                  <div style={{ background: 'transparent' }}></div>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
-                  <div style={{ background: 'transparent' }}></div>
-                  <div style={{ background: '#000', width: '100%', height: '100%' }}></div>
+              <div style={{ background: '#f1f5f9', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
+                  <QrCode size={20} /> QRコード
                 </div>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--surface-hover)', padding: '0.5rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: 500, border: '1px solid var(--border-color)', cursor: 'pointer' }}>
-                <Download size={16} /> QRコード（PNG）をダウンロード
+                <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}>
+                  <svg width="150" height="150" viewBox="0 0 100 100">
+                    <rect x="0" y="0" width="100" height="100" fill="white" />
+                    <path d="M10 10 h20 v20 h-20 z M15 15 h10 v10 h-10 z M20 20 h0 v0 z" fill="#0f172a" fillRule="evenodd" />
+                    <rect x="15" y="15" width="10" height="10" fill="#0f172a" />
+                    <path d="M70 10 h20 v20 h-20 z M75 15 h10 v10 h-10 z" fill="#0f172a" fillRule="evenodd" />
+                    <rect x="75" y="15" width="10" height="10" fill="#0f172a" />
+                    <path d="M10 70 h20 v20 h-20 z M15 75 h10 v10 h-10 z" fill="#0f172a" fillRule="evenodd" />
+                    <rect x="15" y="75" width="10" height="10" fill="#0f172a" />
+                    {/* pattern mock */}
+                    <rect x="40" y="10" width="5" height="10" fill="#0f172a" />
+                    <rect x="50" y="15" width="15" height="5" fill="#0f172a" />
+                    <rect x="10" y="40" width="20" height="5" fill="#0f172a" />
+                    <rect x="40" y="30" width="10" height="20" fill="#0f172a" />
+                    <rect x="30" y="50" width="40" height="10" fill="#0f172a" />
+                    <rect x="60" y="40" width="10" height="10" fill="#0f172a" />
+                    <rect x="80" y="40" width="10" height="30" fill="#0f172a" />
+                    <rect x="40" y="70" width="20" height="5" fill="#0f172a" />
+                    <rect x="50" y="80" width="10" height="10" fill="#0f172a" />
+                    <rect x="70" y="85" width="15" height="5" fill="#0f172a" />
+                  </svg>
+                </div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.5rem', fontFamily: 'monospace' }}>
+                  https://www.slf.onl/companyname/3tbsn
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', width: '100%', justifyContent: 'center' }}>
+                  <button style={{ padding: '0.6rem 1.75rem', background: 'white', border: '1px solid var(--border-color)', borderRadius: '6px', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', cursor: 'pointer' }}>閉じる</button>
+                  <button style={{ padding: '0.6rem 1.75rem', background: '#2563eb', border: 'none', borderRadius: '6px', fontSize: '0.875rem', fontWeight: 600, color: 'white', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}><Download size={16} /> 画像を保存</button>
+                </div>
               </div>
             </div>
           </div>
