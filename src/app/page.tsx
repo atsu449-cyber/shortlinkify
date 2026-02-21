@@ -243,6 +243,65 @@ export default function Home() {
         </Link>
       </section>
 
+      {/* FAQ Section */}
+      <section style={{ padding: '4rem 1.5rem', background: 'var(--bg-color)', borderTop: '1px solid var(--border-color)' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div style={{ display: 'inline-block', background: 'rgba(99, 102, 241, 0.1)', color: 'var(--primary)', padding: '0.5rem 1rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1rem' }}>
+              FAQ
+            </div>
+            <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem' }}>よくあるご質問</h2>
+            <p style={{ color: 'var(--text-muted)' }}>法人・個人の皆様からいただくご質問にお答えします。</p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {/* FAQ Item 1 */}
+            <div className="glass-panel" style={{ padding: '1.5rem', background: 'white' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Q.</span>
+                <span>なぜこれほど高機能なのに、永久無料・無制限で使えるのですか？</span>
+              </h3>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.95rem', paddingLeft: '1.8rem' }}>
+                <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>A.</span> 当社ではShortLinkify単体での直接的なマネタイズ（有料化）ではなく、本ツールを入り口としたマーケティング支援や、別途展開している他事業とのシナジー効果による「トータルでの収益最大化」を事業モデルとしております。そのため、本システム自体はマーケティング・インフラとして機能制限なく、永続的に無料でご提供することが可能です。
+              </p>
+            </div>
+
+            {/* FAQ Item 2 */}
+            <div className="glass-panel" style={{ padding: '1.5rem', background: 'white' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Q.</span>
+                <span>急にサービスが終了したり、作成したリンクが切れたりしませんか？</span>
+              </h3>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.95rem', paddingLeft: '1.8rem' }}>
+                <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>A.</span> ご安心ください。本サービスはモダンなサーバーレスアーキテクチャ（データベースにSupabase、ホスティングにVercel）を採用しており、ユーザー数やアクセス数の急激な増加に対しても自動でスケール（拡張）する強固なインフラストラクチャの上に構築されています。そのため、一時的なアクセス集中によるダウンや、インフラ維持コストの肥大化による突然のサービス終了のリスクを極小化しております。
+              </p>
+            </div>
+
+            {/* FAQ Item 3 */}
+            <div className="glass-panel" style={{ padding: '1.5rem', background: 'white' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Q.</span>
+                <span>法人利用を検討しています。セキュリティやデータの扱いは安全ですか？</span>
+              </h3>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.95rem', paddingLeft: '1.8rem' }}>
+                <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>A.</span> はい、大企業のセキュリティ基準に対応できる水準を確保しております。通信はすべてSSL/TLSで暗号化され、アカウントの認証機能やデータベースへのアクセス権限（RLS）も厳格に管理されています。また、ご登録いただいた会員情報について無断での第三者提供は行わず、自社のプライバシーポリシーに則り適正に管理・運用いたします。悪質なスパムユーザー等に対しては、利用規約（反社会的勢力の排除・禁止事項）に基づき即時アカウント停止等の厳正な措置をとることで、プラットフォームの健全性を保っています。
+              </p>
+            </div>
+
+            {/* FAQ Item 4 */}
+            <div className="glass-panel" style={{ padding: '1.5rem', background: 'white' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <span style={{ color: 'var(--primary)', fontWeight: 700 }}>Q.</span>
+                <span>会員登録なしでも利用できますか？</span>
+              </h3>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '0.95rem', paddingLeft: '1.8rem' }}>
+                <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>A.</span> いいえ、安全なプラットフォーム運営のため、全ユーザー様に事前の無料アカウント登録をお願いしております。匿名での不正利用やフィッシング詐欺目的でのURL生成を根絶し、すべての皆様が安心して利用できる環境を提供するため、ご理解とご協力をお願いいたします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer style={{ borderTop: '1px solid var(--border-color)', paddingTop: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
         <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem', fontSize: '0.875rem', flexWrap: 'wrap' }}>
