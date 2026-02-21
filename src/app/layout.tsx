@@ -8,6 +8,7 @@ import { createClient } from '@/utils/supabase/server';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://slf.onl'),
   title: 'ShortLinkify｜永久無料・無制限の短縮URL一括生成サービス',
   description: 'カスタムURLの設定、生成数無制限（一括最大300件）・利用期限なしのURL短縮、多角的なアクセス解析、QRコード自動生成など、マーケティングとリンク管理に必要なすべての機能を安全・完全無料でご提供します。',
   openGraph: {
