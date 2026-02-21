@@ -17,13 +17,14 @@ export default function LawPage() {
               <tr>
                 <th style={{ width: '30%', textAlign: 'left', padding: '1rem', borderBottom: '1px solid var(--border-color)', background: 'var(--bg-color)' }}>販売事業者（運営者）</th>
                 <td style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)' }}>
-                  【ご自身の氏名 または 会社名をご記載ください】
+                  アイマケラボ
                 </td>
               </tr>
               <tr>
                 <th style={{ width: '30%', textAlign: 'left', padding: '1rem', borderBottom: '1px solid var(--border-color)', background: 'var(--bg-color)' }}>運営責任者</th>
                 <td style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)' }}>
-                  【ご自身の氏名 または 代表者名をご記載ください】
+                  アイマケラボ<br />
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>※運営責任者の氏名については、開示請求があった場合、法令に基づき遅滞なく開示します。</span>
                 </td>
               </tr>
               <tr>
@@ -36,8 +37,9 @@ export default function LawPage() {
               <tr>
                 <th style={{ width: '30%', textAlign: 'left', padding: '1rem', borderBottom: '1px solid var(--border-color)', background: 'var(--bg-color)' }}>連絡先（お問い合わせ）</th>
                 <td style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)' }}>
-                  メール：【ご連絡用メールアドレスをご記載ください】<br />
-                  お問い合わせフォームまたはメールにてご連絡ください。
+                  メール：aimarkelab@gmail.com<br />
+                  お問い合わせはメールにてご連絡ください。<br />
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>※電話番号については、開示請求があった場合、法令に基づき遅滞なく開示します。</span>
                 </td>
               </tr>
               <tr>
