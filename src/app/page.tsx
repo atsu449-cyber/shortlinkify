@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { ArrowRight, BarChart3, Link as LinkIcon, QrCode, Zap, ShieldCheck, CheckCircle2, Download } from 'lucide-react';
+import { ArrowRight, BarChart3, Link as LinkIcon, QrCode, Zap, ShieldCheck, CheckCircle2, Download, Sparkles } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="container" style={{ padding: '2rem 1.5rem', minHeight: 'calc(100vh - 100px)' }}>
       {/* Hero Section */}
       <section className="text-center animate-fade-in hero-section" style={{ marginTop: '1rem', marginBottom: '4rem' }}>
-        <div style={{ display: 'inline-block', background: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)', padding: '0.35rem 1rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.2)', fontSize: '0.875rem' }}>
-          ✨ すべての機能が永久無料・生成数も無制限
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#0f172a', color: '#ffffff', padding: '0.35rem 1.25rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1.25rem', border: '1px solid rgba(255, 255, 255, 0.1)', fontSize: '0.875rem', boxShadow: '0 4px 14px 0 rgba(0,0,0,0.1)' }}>
+          <Sparkles size={16} color="#ffffff" /> すべての機能が永久無料・生成数も無制限
         </div>
         <h1 className="hero-title" style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: 1.2 }}>
           URLをスマートに。<br />
