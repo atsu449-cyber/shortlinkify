@@ -211,7 +211,7 @@ export default function RegisterPage() {
               style={{ marginTop: '0.25rem', width: '1.25rem', height: '1.25rem', cursor: 'pointer' }}
             />
             <label htmlFor="agreement" style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: '1.5', cursor: 'pointer', fontWeight: 'normal' }}>
-              <Link href="#" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>利用規約</Link> および <Link href="#" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>プライバシーポリシー</Link> に同意します。<br />
+              <Link href="/terms" target="_blank" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>利用規約</Link> および <Link href="/privacy" target="_blank" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>プライバシーポリシー</Link> に同意します。<br />
               ※ご入力いただいた情報は、各種サービスのご案内等に利用させていただく場合があります。
             </label>
           </div>
