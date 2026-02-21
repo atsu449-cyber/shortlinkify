@@ -245,9 +245,10 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ borderTop: '1px solid var(--border-color)', paddingTop: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
-        <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem', fontSize: '0.875rem' }}>
+        <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem', fontSize: '0.875rem', flexWrap: 'wrap' }}>
           <Link href="/terms" style={{ color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:text-primary">利用規約</Link>
           <Link href="/privacy" style={{ color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:text-primary">プライバシーポリシー</Link>
+          <Link href="/law" style={{ color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:text-primary">特定商取引法に基づく表記</Link>
         </div>
         <p>&copy; {new Date().getFullYear()} ShortLinkify. All rights reserved.</p>
       </footer>
