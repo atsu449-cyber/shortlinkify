@@ -40,7 +40,7 @@ export async function GET(request: Request) {
     // クリックログの取得
     const { data: logs, error: logsError } = await supabase
       .from('click_logs')
-      .select('id, clicked_at, ip_address, user_agent, referer, device_type, country')
+      .select('id, clicked_at, user_agent, referer, device_type')
       .eq('url_id', id)
       .gte('clicked_at', thirtyDaysAgoString)
       .order('clicked_at', { ascending: false });
@@ -53,9 +53,8 @@ export async function GET(request: Request) {
     // CSV フォーマット生成
     // BOM (Byte Order Mark) を追加して Excel での文字化けを防ぐ
     const BOM = '\uFEFF';
-    const csvHeaders = ['クリック日時', 'デバイス', 'リファラ', 'ユーザーエージェント', 'IPアドレス(匿名化)'].join(',');
+    const csvHeaders = ['クリック日時', 'デバイスタイプ', 'リファラ (参照元URL)', 'OS・ブラウザ等 (UserAgent)'].join(',');
 
-    // IPアドレスの一部マスク処理
     const csvRows = logs.map(log => {
       const date = new Date(log.clicked_at).toLocaleString('ja-JP');
       const device = log.device_type || 'Unknown';
@@ -63,31 +62,11 @@ export async function GET(request: Request) {
       // カンマが含まれている可能性があるのでダブルクォーテーションで囲む
       const userAgent = `"${(log.user_agent || '').replace(/"/g, '""')}"`;
 
-      // IPを一部マスク (例: 192.168.1.xxx)
-      let maskedIp = 'Unknown';
-      if (log.ip_address && log.ip_address !== 'unknown') {
-        const parts = log.ip_address.split('.');
-        if (parts.length === 4) {
-          maskedIp = `${parts[0]}.${parts[1]}.${parts[2]}.***`;
-        } else if (log.ip_address.includes(':')) {
-          // IPv6
-          const v6parts = log.ip_address.split(':');
-          if (v6parts.length > 3) {
-            maskedIp = `${v6parts[0]}:${v6parts[1]}:***`;
-          } else {
-            maskedIp = log.ip_address;
-          }
-        } else {
-          maskedIp = log.ip_address;
-        }
-      }
-
       return [
         `"${date}"`,
         `"${device}"`,
         `"${referer}"`,
-        userAgent,
-        `"${maskedIp}"`
+        userAgent
       ].join(',');
     });
 
