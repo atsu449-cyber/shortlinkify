@@ -8,8 +8,8 @@ import { createClient } from '@/utils/supabase/server';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ShortLinkify - スマートな短縮URL作成・分析ツール',
-  description: '自社ドメインでの一括URL短縮化、QRコード生成、詳細なクリック分析をこれ一つで。',
+  title: 'ShortLinkify - 全機能無料の短縮URL作成・分析プラットフォーム',
+  description: 'カスタムURLの設定、最大300件の一括短縮処理、多角的なアクセス解析、QRコード自動生成など、マーケティングとリンク管理に必要なすべての機能を安全・完全無料でご提供します。',
 };
 
 export default async function RootLayout({
@@ -22,12 +22,10 @@ export default async function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <nav className="glass-panel" style={{
+        <nav className="glass-panel main-nav" style={{
           position: 'sticky',
           top: '0',
           zIndex: 50,
-          margin: '1rem',
-          padding: '1rem 2rem',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
