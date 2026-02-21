@@ -1,6 +1,6 @@
 export default function Logo({ className = '', style = {} }: { className?: string, style?: React.CSSProperties }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`} style={{ ...style, fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.02em', color: 'var(--text-main)' }}>
+    <div className={`flex items-center gap-2 logo-container ${className}`} style={{ ...style, fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.02em', color: 'var(--text-main)' }}>
       <div style={{
         display: 'flex',
         alignItems: 'center',
