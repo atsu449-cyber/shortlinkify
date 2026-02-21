@@ -227,7 +227,22 @@ label {
 }
 
 /* Mobile Adjustments */
+.sp-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .sp-only {
+    display: inline;
+  }
+
   .main-nav {
     padding: 0.5rem 1rem !important;
     margin: 0.5rem !important;

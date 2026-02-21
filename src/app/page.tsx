@@ -11,11 +11,11 @@ export default function Home() {
         </div>
         <h1 className="hero-title" style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: 1.2 }}>
           URLをスマートに。<br />
-          <span className="text-gradient">必要なすべてを</span>安全・シンプルに提供
+          <span className="text-gradient">必要なすべてを</span><br className="sp-only" />安全・シンプルに提供
         </h1>
         <p style={{ fontSize: '1.125rem', color: 'var(--text-muted)', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: 1.6 }}>
-          通常は有料プランとなる「URLの文字列カスタマイズ」も無料。<br />
-          最大300件の一括生成やQRコード、高機能なアクセス解析も可能
+          通常は有料プランとなる<br className="sp-only" />「URLの文字列カスタマイズ」も無料。<br />
+          最大300件の一括生成やQRコード、<br className="sp-only" />高機能なアクセス解析も可能
         </p>
         <div className="flex justify-center gap-4 hero-buttons">
           <Link href="/register" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
@@ -80,7 +80,7 @@ export default function Home() {
 
         {/* Detail 1: URL Customization */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center', marginBottom: '6rem' }}>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>通常は有料の「カスタムURL」が無料で使い放題</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               他社の短縮URLサービスでは高額な月額課金が必要となるケースが多い「URL前半の文字列カスタマイズ」が、完全無料で使用できます。
@@ -91,7 +91,7 @@ export default function Home() {
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><CheckCircle2 size={18} color="var(--success)" /> URLを一目見るだけで何のキャンペーンか把握可能</li>
             </ul>
           </div>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <div className="glass-panel" style={{ padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
               <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 500 }}>設定したいテキスト（任意）</label>
@@ -109,7 +109,7 @@ export default function Home() {
 
         {/* Detail 2: Bulk Shortening */}
         <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '4rem', alignItems: 'center', marginBottom: '6rem' }}>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <div className="glass-panel" style={{ padding: '2.5rem', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'flex-end' }}>
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Excel等のデータと連携しやすい一括生成</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               メルマガの差し込み用URLや、大量のキャンペーン個別リンクなど、最大300件までの長大なURL群をコピペだけで一瞬にして一括短縮できます。
@@ -141,7 +141,7 @@ export default function Home() {
 
         {/* Detail 3: Analytics */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center', marginBottom: '6rem' }}>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>直感的な分析ダッシュボード</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               どのリンクが、いつクリックされたのか？「月別」「週別」「日別」はもちろん、効果測定に重要な「時間帯別」の細かな傾向までグラフで可視化します。
@@ -150,7 +150,7 @@ export default function Home() {
               ターゲット層がアクティブな時間を正確に把握することで、次回以降のプロモーション配信の精度を劇的に向上させます。
             </p>
           </div>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <div className="glass-panel" style={{ padding: '0', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
               <div style={{ background: 'white', padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
@@ -197,7 +197,7 @@ export default function Home() {
 
         {/* Detail 4: QR Code Generation */}
         <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '4rem', alignItems: 'center' }}>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <div className="glass-panel" style={{ padding: '0', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
               <div style={{ background: '#f1f5f9', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -217,7 +217,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div style={{ flex: '1 1 350px' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)' }}>
             <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>QRコードの即時・自動生成</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               短縮URLを作成するたびに、ダウンロード可能な「QRコード（PNG画像）」が自動で即座に発行されます。
