@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'ShortLinkify - 全機能無料の短縮URL作成・分析プラットフォーム',
-  description: 'カスタムURLの設定、最大300件の一括短縮処理、多角的なアクセス解析、QRコード自動生成など、マーケティングとリンク管理に必要なすべての機能を安全・完全無料でご提供します。',
+  description: 'カスタムURLの設定、生成数無制限（一括最大300件）・利用期限なしのURL短縮、多角的なアクセス解析、QRコード自動生成など、マーケティングとリンク管理に必要なすべての機能を安全・完全無料でご提供します。',
 };
 
 export default async function RootLayout({

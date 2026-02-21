@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center animate-fade-in hero-section" style={{ marginTop: '1rem', marginBottom: '4rem' }}>
         <div style={{ display: 'inline-block', background: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)', padding: '0.35rem 1rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.2)', fontSize: '0.875rem' }}>
-          ✨ すべての機能が永久無料
+          ✨ すべての機能が永久無料・生成数も無制限
         </div>
         <h1 className="hero-title" style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: 1.2 }}>
           URLをスマートに。<br />
@@ -45,9 +45,9 @@ export default function Home() {
             <div style={{ background: 'var(--surface-hover)', width: '48px', height: '48px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
               <Zap size={24} color="var(--primary)" />
             </div>
-            <h3 style={{ fontSize: '1.25rem' }}>数百件の一括短縮処理</h3>
+            <h3 style={{ fontSize: '1.25rem' }}>無制限・一括短縮機能</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-              数十〜数百（1回最大300件）の長いURLもシートからコピペして一括変換。大量のリンク作成を一瞬で終わらせます。
+              生成数や利用期限は完全に無制限。長大なURL群も対象をコピペするだけで一瞬（1回最大300件）で一括変換できます。
             </p>
           </div>
 
@@ -129,11 +129,12 @@ export default function Home() {
             </div>
           </div>
           <div style={{ flex: '1 1 min(100%, 350px)' }}>
-            <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Excel等のデータと連携しやすい一括生成</h3>
+            <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>無制限のURL生成と<br className="sp-only" />効率的な一括処理</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              メルマガの差し込み用URLや、大量のキャンペーン個別リンクなど、最大300件までの長大なURL群をコピペだけで一瞬にして一括短縮できます。
+              短縮URLのトータル生成数に上限はなく、作成したリンクの期限切れもありません。あらゆる施策で気兼ねなく無制限にご活用いただけます。
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+              さらに、メルマガの差し込み用URLなど、最大300件までの長大なURL群もコピペだけで一瞬にして一括短縮できます。<br />
               1つずつ手作業で変換する手間を省き、作業時間を数分の一に短縮。転記ミスや漏れも防ぐことができます。
             </p>
           </div>
