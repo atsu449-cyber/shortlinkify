@@ -1,18 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
-export default function AnalyticsWrapper({ gaId }: { gaId?: string }) {
+export default function AnalyticsWrapper({ gaId, gtmId }: { gaId?: string, gtmId?: string }) {
   const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
-    // 初期ロード時の状態確認
     if (localStorage.getItem('cookieConsent') === 'true') {
       setHasConsent(true);
     }
 
-    // バナーで「同意する」が押された際のイベントリスニング
     const handleConsentUpdate = () => {
       if (localStorage.getItem('cookieConsent') === 'true') {
         setHasConsent(true);
@@ -23,8 +21,12 @@ export default function AnalyticsWrapper({ gaId }: { gaId?: string }) {
     return () => window.removeEventListener('cookieConsentUpdated', handleConsentUpdate);
   }, []);
 
-  // GA_IDが無いか、ユーザー同意が無い場合はタグを注入しない
-  if (!gaId || !hasConsent) return null;
+  if (!hasConsent) return null;
 
-  return <GoogleAnalytics gaId={gaId} />;
+  return (
+    <>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
+      {gtmId && <GoogleTagManager gtmId={gtmId} />}
+    </>
+  );
 }

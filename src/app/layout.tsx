@@ -47,7 +47,7 @@ export default async function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <AnalyticsWrapper gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <AnalyticsWrapper gaId={process.env.NEXT_PUBLIC_GA_ID} gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
         <nav className="glass-panel main-nav" style={{
           position: 'sticky',
           top: '0',
