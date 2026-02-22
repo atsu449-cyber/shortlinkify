@@ -5,6 +5,8 @@ import { Link2, Copy, BarChart2, Plus, Download, Trash2, List, Search, CheckCirc
 import { createClient } from '@/utils/supabase/client';
 import QRCode from 'qrcode';
 import { fetchMetaTitle } from '../actions/fetchTitle';
+import { verifyUrlsWithSafeBrowsing } from '../actions/url-security';
+import { checkRateLimit } from '../actions/rate-limit';
 
 type UrlItem = {
   id: string;
@@ -100,6 +102,35 @@ export default function DashboardPage() {
       alert('エイリアス（組織・プロジェクト名など）を入力してください。');
       setIsGenerating(false);
       return;
+    }
+
+    // Google Safe Browsing 検証
+    const urlsToCheck = activeTab === 'single' ? [longUrl] : bulkUrls.split(/\r?\n/).map(u => u.trim()).filter(u => u);
+
+    if (urlsToCheck.length === 0) {
+      setIsGenerating(false);
+      return;
+    }
+
+    // レートリミット（スロットリング）検証: 1分間に1500件制限
+    const rateLimitResult = await checkRateLimit(urlsToCheck.length);
+    if (!rateLimitResult.allowed) {
+      alert(`【制限エラー】\n${rateLimitResult.message}`);
+      setIsGenerating(false);
+      return;
+    }
+
+    if (urlsToCheck.length > 0) {
+      try {
+        const safetyResult = await verifyUrlsWithSafeBrowsing(urlsToCheck);
+        if (!safetyResult.isSafe) {
+          alert(`【警告】以下のURLがフィッシング・マルウェア等の危険サイトとして検知されました。\nシステムの安全のため登録はブロックされました。\n\n${safetyResult.threats?.join('\\n')}`);
+          setIsGenerating(false);
+          return;
+        }
+      } catch (e) {
+        console.error("Safe Browsing Error:", e);
+      }
     }
 
     if (activeTab === 'single') {
@@ -424,23 +455,23 @@ export default function DashboardPage() {
                           {item.longUrl}
                         </a>
                       </div>
-                      <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'center' }}>
                         <button
                           className="btn btn-secondary"
                           title="URLをコピー"
-                          style={{ padding: '0.5rem', color: copiedId === item.id ? 'var(--success)' : 'inherit', borderColor: copiedId === item.id ? 'var(--success)' : '' }}
+                          style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.5rem 0.75rem', fontSize: '0.875rem', fontWeight: 500, color: copiedId === item.id ? 'var(--success)' : 'inherit', borderColor: copiedId === item.id ? 'var(--success)' : '' }}
                           onClick={() => handleCopy(item.id, item.shortUrl)}
                         >
-                          {copiedId === item.id ? <CheckCircle2 size={16} /> : <Copy size={16} />}
+                          {copiedId === item.id ? <><CheckCircle2 size={16} /> コピー済</> : <><Copy size={16} /> 短縮URL</>}
                         </button>
-                        <button className="btn btn-secondary" title="QRコードを表示" style={{ padding: '0.5rem' }} onClick={() => handleShowQRModal(item.shortUrl)}>
-                          <QrCode size={16} />
+                        <button className="btn btn-secondary" title="QRコードを表示" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.5rem 0.75rem', fontSize: '0.875rem', fontWeight: 500 }} onClick={() => handleShowQRModal(item.shortUrl)}>
+                          <QrCode size={16} /> QRコード
                         </button>
-                        <Link href={`/analytics/${item.id}`} className="btn btn-secondary" title="分析を見る" style={{ padding: '0.5rem' }}>
-                          <BarChart2 size={16} />
+                        <Link href={`/analytics/${item.id}`} className="btn btn-secondary" title="分析を見る" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.5rem 0.75rem', fontSize: '0.875rem', fontWeight: 500, textDecoration: 'none' }}>
+                          <BarChart2 size={16} /> アクセス解析
                         </Link>
-                        <button className="btn btn-secondary" title="削除" style={{ padding: '0.5rem', color: 'var(--danger)', borderColor: 'rgba(239, 68, 68, 0.3)' }} onClick={() => handleDelete(item.id)}>
-                          <Trash2 size={16} />
+                        <button className="btn btn-secondary" title="削除" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.5rem 0.75rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--danger)', borderColor: 'rgba(239, 68, 68, 0.3)' }} onClick={() => handleDelete(item.id)}>
+                          <Trash2 size={16} /> 削除
                         </button>
                       </div>
                     </div>

@@ -4,6 +4,8 @@ import './globals.css';
 import Link from 'next/link';
 import Logo from '../components/Logo';
 import { createClient } from '@/utils/supabase/server';
+import CookieBanner from '../components/CookieBanner';
+import AnalyticsWrapper from '../components/AnalyticsWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -45,6 +47,7 @@ export default async function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
+        <AnalyticsWrapper gaId={process.env.NEXT_PUBLIC_GA_ID} />
         <nav className="glass-panel main-nav" style={{
           position: 'sticky',
           top: '0',
@@ -76,6 +79,7 @@ export default async function RootLayout({
         <main>
           {children}
         </main>
+        <CookieBanner />
       </body>
     </html>
   );
