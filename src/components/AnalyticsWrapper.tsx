@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
-export default function AnalyticsWrapper({ gaId, gtmId }: { gaId?: string, gtmId?: string }) {
+export default function AnalyticsWrapper({ gtmId }: { gtmId?: string }) {
   const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,6 @@ export default function AnalyticsWrapper({ gaId, gtmId }: { gaId?: string, gtmId
 
   return (
     <>
-      {gaId && <GoogleAnalytics gaId={gaId} />}
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
     </>
   );
