@@ -91,9 +91,8 @@ export default function Home() {
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><CheckCircle2 size={18} color="var(--success)" /> URLを一目見るだけで何のキャンペーンか把握可能</li>
             </ul>
           </div>
-          <div style={{ flex: '1 1 min(100%, 350px)' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)', minWidth: 0 }}>
             <div className="glass-panel" style={{ padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
               <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 500 }}>設定したいテキスト（任意）</label>
               <div style={{ display: 'flex', alignItems: 'center', background: 'var(--background)', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid var(--primary)', marginBottom: '1.5rem', boxShadow: '0 0 0 2px rgba(99, 102, 241, 0.1)' }}>
                 <span style={{ color: 'var(--text-muted)' }}>slf.onl / </span>
@@ -109,14 +108,13 @@ export default function Home() {
 
         {/* Detail 2: Bulk Shortening */}
         <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '4rem', alignItems: 'center', marginBottom: '6rem' }}>
-          <div style={{ flex: '1 1 min(100%, 350px)' }}>
-            <div className="glass-panel" style={{ padding: '2.5rem', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'flex-end' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)', minWidth: 0 }}>
+            <div className="glass-panel" style={{ padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'flex-end', flexWrap: 'wrap', gap: '0.5rem' }}>
                 <span style={{ fontSize: '0.875rem', fontWeight: 500 }}>対象URL（改行区切り）</span>
                 <span style={{ fontSize: '0.75rem', color: 'var(--primary)', background: 'rgba(99, 102, 241, 0.1)', padding: '4px 8px', borderRadius: '4px' }}>最大 300 件まで</span>
               </div>
-              <div style={{ background: 'var(--background)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.875rem', fontFamily: 'monospace', lineHeight: 1.8, height: '140px', overflow: 'hidden' }}>
+              <div style={{ background: 'var(--background)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.875rem', fontFamily: 'monospace', lineHeight: 1.8, height: '140px', overflow: 'hidden', wordBreak: 'break-all' }}>
                 https://example.com/products/item-a?utm_...<br />
                 https://example.com/products/item-b?utm_...<br />
                 https://example.com/products/item-c?utm_...<br />
@@ -151,9 +149,8 @@ export default function Home() {
               さらに、マーケティングに直結するクリーンな生データ（日時・デバイス・リファラ）を<strong style={{ color: 'var(--primary)' }}>CSV形式でダウンロード可能</strong>。社内BIツールや既存のExcelレポートへシームレスに転記でき、ターゲット層がアクティブな時間を正確に把握することで、次回以降のプロモーション配信の精度を劇的に向上させます。
             </p>
           </div>
-          <div style={{ flex: '1 1 min(100%, 350px)' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)', minWidth: 0 }}>
             <div className="glass-panel" style={{ padding: '0', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
               <div style={{ background: 'white', padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', fontWeight: 600, color: 'var(--text-main)' }}>
                   <BarChart3 size={18} color="var(--primary)" /> アクセス推移
@@ -198,20 +195,19 @@ export default function Home() {
 
         {/* Detail 4: QR Code Generation */}
         <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '4rem', alignItems: 'center' }}>
-          <div style={{ flex: '1 1 min(100%, 350px)' }}>
+          <div style={{ flex: '1 1 min(100%, 350px)', minWidth: 0 }}>
             <div className="glass-panel" style={{ padding: '0', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary-glow)' }}></div>
-              <div style={{ background: '#f1f5f9', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ background: '#f1f5f9', padding: '2.5rem 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
                   <QrCode size={20} /> QRコード
                 </div>
                 <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', display: 'flex', justifyContent: 'center' }}>
                   <img src="/qr-demo.png" alt="QR Code" width={150} height={150} style={{ display: 'block', borderRadius: '4px' }} />
                 </div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.5rem', fontFamily: 'monospace' }}>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.5rem', fontFamily: 'monospace', wordBreak: 'break-all', textAlign: 'center' }}>
                   https://www.slf.onl/companyname/3tbsn
                 </div>
-                <div style={{ display: 'flex', gap: '0.75rem', width: '100%', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', gap: '0.75rem', width: '100%', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <button style={{ padding: '0.6rem 1.75rem', background: 'white', border: '1px solid var(--border-color)', borderRadius: '6px', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', cursor: 'pointer' }}>閉じる</button>
                   <button style={{ padding: '0.6rem 1.75rem', background: '#2563eb', border: 'none', borderRadius: '6px', fontSize: '0.875rem', fontWeight: 600, color: 'white', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}><Download size={16} /> 画像を保存</button>
                 </div>
@@ -244,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section style={{ padding: '4rem 1.5rem', background: 'var(--bg-color)', borderTop: '1px solid var(--border-color)' }}>
+      <section className="glass-panel" style={{ padding: '4rem 1.5rem', marginBottom: '4rem' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <div style={{ display: 'inline-block', background: 'rgba(99, 102, 241, 0.1)', color: 'var(--primary)', padding: '0.5rem 1rem', borderRadius: '999px', fontWeight: 600, marginBottom: '1rem' }}>
