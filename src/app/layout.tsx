@@ -48,18 +48,7 @@ export default async function RootLayout({
     <html lang="ja">
       <body className={inter.className}>
         <AnalyticsWrapper gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-        <nav className="glass-panel main-nav" style={{
-          position: 'sticky',
-          top: '1rem',
-          zIndex: 50,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '0.6rem 1.75rem',
-          margin: '1rem auto 2rem',
-          maxWidth: '1200px',
-          width: 'calc(100% - 2rem)'
-        }}>
+        <nav className="glass-panel main-nav">
           <Link href="/" style={{ textDecoration: 'none' }}>
             <Logo />
           </Link>

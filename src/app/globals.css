@@ -55,6 +55,19 @@ a:hover {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
+.main-nav {
+  position: sticky;
+  top: 1rem;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.75rem;
+  margin: 1rem auto 2rem;
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+}
+
 /* Typography */
 h1,
 h2,
@@ -244,6 +257,8 @@ label {
   }
 
   .main-nav {
+    top: 0 !important;
+    width: auto !important;
     padding: 0.5rem 0.75rem !important;
     margin: 0.5rem 0.25rem !important;
   }
