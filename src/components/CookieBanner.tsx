@@ -30,7 +30,7 @@ export default function CookieBanner() {
     <div className="animate-fade-in" style={{
       position: 'fixed',
       bottom: 0, left: 0, right: 0,
-      background: 'var(--card-bg)',
+      backgroundColor: '#ffffff',
       padding: '1.5rem',
       borderTop: '1px solid var(--border-color)',
       zIndex: 9999,
