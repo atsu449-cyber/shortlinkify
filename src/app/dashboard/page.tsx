@@ -443,9 +443,9 @@ export default function DashboardPage() {
                 const fullShortUrl = `${protocol}//${item.shortUrl}`;
                 return (
                   <div key={item.id} className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <h3 style={{ fontSize: '1.125rem', color: 'var(--primary)', marginBottom: '0.25rem', wordBreak: 'break-all' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1.5rem', flexWrap: 'wrap' }}>
+                      <div style={{ flex: '1 1 300px', minWidth: 0 }}>
+                        <h3 style={{ fontSize: '1.125rem', color: 'var(--primary)', marginBottom: '0.5rem', wordBreak: 'break-all' }}>
                           {fullShortUrl}
                         </h3>
                         <div style={{ fontWeight: 600, fontSize: '1rem', color: 'var(--text-main)', marginBottom: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -455,7 +455,7 @@ export default function DashboardPage() {
                           {item.longUrl}
                         </a>
                       </div>
-                      <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                         <button
                           className="btn btn-secondary"
                           title="URLをコピー"
