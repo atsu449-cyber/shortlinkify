@@ -258,9 +258,13 @@ label {
 
   .main-nav {
     top: 0 !important;
-    width: auto !important;
+    width: 100% !important;
     padding: 0.5rem 0.75rem !important;
-    margin: 0.5rem 0.25rem !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
   }
 
   .main-nav .flex.gap-4 {
