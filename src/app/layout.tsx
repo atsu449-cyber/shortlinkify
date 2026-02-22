@@ -55,7 +55,7 @@ export default async function RootLayout({
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '1rem 2rem',
+          padding: '0.6rem 1.75rem',
           margin: '1rem auto 2rem',
           maxWidth: '1200px',
           width: 'calc(100% - 2rem)'
