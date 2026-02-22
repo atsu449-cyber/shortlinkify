@@ -50,11 +50,15 @@ export default async function RootLayout({
         <AnalyticsWrapper gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
         <nav className="glass-panel main-nav" style={{
           position: 'sticky',
-          top: '0',
+          top: '1rem',
           zIndex: 50,
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          padding: '1rem 2rem',
+          margin: '1rem auto 2rem',
+          maxWidth: '1200px',
+          width: 'calc(100% - 2rem)'
         }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <Logo />
